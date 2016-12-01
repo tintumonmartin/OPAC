@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+opac_student,opac,model_opac,group_opac_student,1,1,1,1
+opac_student_info,student_info,model_student_info,group_opac_student,1,1,1,0
+opac_student_dept_info,dept_list,model_dept_list,group_opac_student,1,0,0,0
+opac_student_book_info,book_stock,model_book_stock,group_opac_student,1,0,0,0
+opac_student_book_reserve,book_reserve,model_book_reserve,group_opac_student,1,1,1,1
+opac_student_course_detail,course_detail,model_course_detail,group_opac_student,1,0,0,0
+opac_lecturer_info,student_info,model_lecturer_info,group_opac_lecturer,1,1,1,0
+opac_lecturer_stud_info,student_info,model_student_info,group_opac_lecturer,1,1,1,0
+opac_lecturer,opac,model_opac,group_opac_lecturer,1,1,1,1
+opac_public,opac,model_opac,,1,1,1,1
+opac_public_student_info,student_info,model_student_info,,1,1,1,1
+opac_public_course_detail,course_detail,model_course_detail,,1,1,1,1
+opac_public_book_info,book_stock,model_book_stock,,1,1,1,1

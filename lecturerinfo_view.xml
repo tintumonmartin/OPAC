@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="lecturerinfo_form_view">
+			<field name="name">lecturer.info</field>
+			<field name="model">lecturer.info</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Lecturers Info" version="7.0">
+					<header>
+						<h3>Lecturers Registration form</h3>
+					</header>
+					<sheet>
+						<group colspan='2' col='4'>
+							<field name="name" colspan="4" style="width: 50%%" />
+							<field name="dob" on_change="onchange_getage(dob,age)" />
+							<field name="age" />
+							<field name="eligible" />
+							<field name="gender" />
+							<field name="email" />
+							<field name="contact" />
+							<field name="dept" widget="many2many_tags" />
+						</group>
+						<notebook>
+							<page string="Address">
+								<field name="address" style="height: 10%%" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="lecturerinfo_tree_view">
+			<field name="name">lecturer.info.tree</field>
+			<field name="model">lecturer.info</field>
+			<field name="arch" type="xml">
+				<tree string="Lecturers Information">
+					<field name="name" />
+					<field name="dob" />
+					<field name="age" />
+					<field name="gender" />
+					<field name="email" />
+					<field name="contact" />
+					<field name="address" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_lecturerinfo_tree_view">
+			<field name="name">Lecturers Information</field>
+			<field name="res_model">lecturer.info</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="lecturerinfo_submenu" name="Lecturer Information"
+			parent="profileinfo_menu" action="action_lecturerinfo_tree_view" />
+	</data>
+</openerp>

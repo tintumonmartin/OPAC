@@ -1,0 +1,22 @@
+<openerp>
+	<data>
+		<record id="lecturer_info_wizard" model="ir.ui.view">
+			<field name="name">lecturer info form</field>
+			<field name="model">lecturer.info.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Calculate Experience" version="7.0">
+					<group>
+						<field name="startyear" on_change="onchange_getexperience(startyear,endyear)" />
+						<field name="endyear" on_change="onchange_getexperience(startyear,endyear)" />
+						<field name="experience" />
+					</group>
+					<footer>
+						<button name="this_year" string="This Year" type="object" />
+						<button name="update_experience" string="Process" type="object"
+							class="oe_highlight" icon="gtk-execute" />
+					</footer>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

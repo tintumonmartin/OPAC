@@ -1,0 +1,1 @@
+import lecturer_info_wizard

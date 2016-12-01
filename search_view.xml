@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="opac_search_form_view">
+			<field name="name">opac.search</field>
+			<field name="model">opac.search</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Search" version="7.0">
+					<header>
+						<h3>Search</h3>
+					</header>
+
+				</form>
+
+			</field>
+
+		</record>
+	</data>
+</openerp>

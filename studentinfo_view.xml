@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Form View -->
+		<record model="ir.ui.view" id="studentinfo_form_view">
+			<field name="name">student.info.form</field>
+			<field name="model">student.info</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Students Information" version="7.0">
+					<header>
+						<h2>Students Registration form</h2>
+					</header>
+					<sheet>
+						<h2>
+							<i colspan='2'>
+								<center>Welcome for Admission</center>
+							</i>
+						</h2>
+						<group col='4'>
+							<field name="name" />
+							<!-- <field name="lname" /> -->
+							<field name="lname" on_change="onchange_fullname(name,lname)" />
+							<field name="fullname" />
+
+							<newline />
+							<field name="capname" groups="OPAC.group_opac_lecturer" />
+							<field name="image" widget="image" class="oe_avatar oe_left" />
+							<button name="dummy" string="Capitalise" type="object" />
+							<newline />
+							<!-- colspan="2" -->
+							<field name="dob" on_change="onchange_getage_id(dob)" />
+							<field name="age" />
+							<field name="gender" />
+							<!-- <newline /> -->
+							<field name="email" widget="email" on_change="validateemail(email)" />
+							<field name="contact" />
+							<br />
+							<h3 colspan='4'>
+								<u>
+									<center>Admission details</center>
+								</u>
+							</h3>
+							<field name="status" colspan='4' groups="OPAC.group_opac_lecturer" />
+							<field name="regno" attrs="{'invisible':[('status','=',False)]}" />
+							<field name="dept" attrs="{'invisible':[('status','=',False)]}" />
+							<field name="course_name" attrs="{'invisible':[('status','=',False)]}" />
+							<field name="doj" attrs="{'invisible':[('status','=',False)]}" />
+							<field name="docc" attrs="{'invisible':[('status','=',False)]}" />
+							<field name="todate" />
+						</group>
+						<notebook>
+							<page string="Address">
+								<group>
+									<label for="street" string="Address" />
+									<div>
+										<field name="street" placeholder="Street..." />
+										<field name="street2" />
+										<div class="address_format">
+											<field name="city" placeholder="City" style="width: 40%%" />
+											<field name="state_id" class="oe_no_button"
+												placeholder="State" style="width: 37%%" />
+											<field name="zip" placeholder="ZIP" style="width: 20%%" />
+										</div>
+										<field name="country_id" placeholder="Country" class="oe_no_button" />
+									</div>
+									<!-- <field name="website" widget="url" placeholder="e.g. www.openerp.com"/> -->
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Tree View -->
+		<record model="ir.ui.view" id="studentinfo_tree_view">
+			<field name="name">student.info.tree</field>
+			<field name="model">student.info</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Students Information">
+					<field name="fullname" />
+					<!-- <field name="name" /> -->
+					<!-- <field name="lname" /> -->
+					<field name="regno" />
+					<field name="dob" />
+					<field name="age" />
+					<field name="gender" />
+					<field name="email" />
+					<field name="contact" />
+
+					<field name="dept" />
+					<field name="status" />
+					<field name="doj" />
+					<field name="docc" />
+				</tree>
+			</field>
+		</record>
+		<!-- Gantt View -->
+		<record model="ir.ui.view" id="studentinfo_gantt_view">
+			<field name="name">student.info.gantt</field>
+			<field name="model">student.info</field>
+			<field name="type">gantt</field>
+			<field name="arch" type="xml">
+				<gantt string="Personal Details" color="name" date_delay="age"
+					date_start="doj" date_stop="docc">
+					<field name="name" />
+					<field name="age" />
+					<field name="dob" />
+					<field name="doj" />
+					<field name="docc" />
+					<field name="gender" />
+					<field name="email" />
+					<field name="contact" />
+				</gantt>
+			</field>
+		</record>
+
+		<!-- Kanban View -->
+		<record model="ir.ui.view" id="studentinfo_kanban_view">
+			<field name="name">student.info.form</field>
+			<field name="model">student.info</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban quick_create="false" create="true">
+					<field name="name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<t t-set="installed" />
+								<img t-att-src="kanban_image('student.info', 'image', record.id.value)"
+									class="oe_kanban_image" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="fullname" />
+											<br />
+											<field name="age" />
+										</a>
+									</h4>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="studentinfo_graph_view">
+			<field name="name">student.info.graph</field>
+			<field name="model">student.info</field>
+			<field name="type">graph</field>
+			<field name="arch" type="xml">
+				<graph string="Students Information">
+					<field name="name" />
+					<field name="age" />
+					<field name="dob" />
+					<field name="doj" />
+					<field name="docc" />
+					<field name="gender" />
+					<field name="email" />
+					<field name="contact" />
+				</graph>
+			</field>
+		</record>
+
+		<!-- Calendar view -->
+		<record model="ir.ui.view" id="studentinfo_calendar_view">
+			<field name="name">student.info.calendar</field>
+			<field name="model">student.info</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar day_length="1" color="name" date_start="doj"
+					string="personal_details">
+					<!-- date_stop='docc' -->
+					<field name="name" />
+					<!-- <field name="age" /> <field name="dob" /> <field name="doj" /> 
+						<field name="docc" /> <field name="gender" /> <field name="address" /> <field 
+						name="email" /> <field name="contact" /> -->
+				</calendar>
+			</field>
+		</record>
+
+		<!-- Search -->
+		<record model="ir.ui.view" id="studentinfo_search_view">
+			<field name="name">student.info.calendar</field>
+			<field name="model">student.info</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="personal_details">
+					<field name="name" />
+					<filter string="Eligible:Age above 17" icon="terp-personal"
+						domain="[('age','>',17)]" />
+					<filter string="Group by gender" name="group_by_gender"
+						domain="[]" context="{'group_by':'gender'}" />
+					<field name="age" />
+					<field name="dob" />
+					<!-- <field name="end_date" /> -->
+					<field name="gender" />
+					<field name="email" />
+					<field name="contact" />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_studentinfo_tree_view">
+			<field name="name">Student Information</field>
+			<field name="res_model">student.info</field>
+			<field name="view_mode">tree,kanban,form,gantt,graph,calendar</field>
+			<field name="context">{'search_default_group_by_gender': True}</field>
+		</record>
+		<menuitem id="profileinfo_menu" name="Profile" parent="super_parent_menu" />
+		<menuitem id="studentinfo_submenu" name="Student Information"
+			parent="profileinfo_menu" action="action_studentinfo_tree_view" />
+	</data>
+</openerp>

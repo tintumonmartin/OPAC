@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- record tag to create workflow -->
+		<record id="bookreserve_wkf" model="workflow">
+			<field name="name">bookreserve_wkf</field>
+			<field name="osv">book.reserve</field>
+			<field name="on_create">True</field>
+		</record>
+
+		<!-- Workflow Activity -->
+		<record id="act_available" model="workflow.activity">
+			<field name="wkf_id" ref="bookreserve_wkf" />
+			<field name="flow_start">True</field>
+			<field name="name">Available</field>
+		</record>
+		<record id="act_reserved" model="workflow.activity">
+			<field name="wkf_id" ref="bookreserve_wkf" />
+			<field name="name">Reserved</field>
+			<field name="kind">function</field>
+			<field name="action">button_reserved()</field>
+		</record>
+
+		<record id="act_taken" model="workflow.activity">
+			<field name="wkf_id" ref="bookreserve_wkf" />
+			<field name="name">Taken</field>
+			<field name="kind">function</field>
+			<!-- <field name="action">write({'track_state':'t'})</field> -->
+			<field name="action">button_taken()</field>
+		</record>
+		<record id="act_lost" model="workflow.activity">
+			<field name="wkf_id" ref="bookreserve_wkf" />
+			<field name="name">Lost</field>
+			<field name="kind">function</field>
+			<!-- <field name="action">write({'track_state':'t'})</field> -->
+			<field name="action">button_lost()</field>
+			<field name="flow_stop">True</field>
+		</record>
+
+		<!-- workflow Transistion -->
+		<record id="trans_available_taken" model="workflow.transition">
+			<field name="act_from" ref="act_available" />
+			<field name="act_to" ref="act_taken" />
+			<field name="condition">True</field>
+			<field name="signal">button_taken</field>
+		</record>
+		<record id="trans_available_reserved" model="workflow.transition">
+			<field name="act_from" ref="act_available" />
+			<field name="act_to" ref="act_reserved" />
+			<field name="condition">True</field>
+			<field name="signal">button_reserved</field>
+		</record>
+		<record id="trans_reserved_taken" model="workflow.transition">
+			<field name="act_from" ref="act_reserved" />
+			<field name="act_to" ref="act_taken" />
+			<field name="condition">True</field>
+			<field name="signal">button_taken</field>
+		</record>
+
+		<record id="trans_reserved_cancel" model="workflow.transition">
+			<field name="act_from" ref="act_reserved" />
+			<field name="act_to" ref="act_available" />
+			<field name="condition">True</field>
+			<field name="signal">button_return_cancel</field>
+		</record>
+		<record id="trans_taken_return" model="workflow.transition">
+			<field name="act_from" ref="act_taken" />
+			<field name="act_to" ref="act_available" />
+			<field name="condition">True</field>
+			<field name="signal">button_return_cancel</field>
+		</record>
+		<record id="trans_taken_lost" model="workflow.transition">
+			<field name="act_from" ref="act_taken" />
+			<field name="act_to" ref="act_lost" />
+			<field name="condition">True</field>
+			<field name="signal">button_lost</field>
+		</record>
+	</data>
+</openerp>

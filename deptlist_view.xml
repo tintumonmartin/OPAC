@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="deptlist_form_view">
+			<field name="name">dept.list.form</field>
+			<field name="model">dept.list</field>
+			<field name="arch" type="xml">
+				<form string="Department List" version="7.0">
+					<sheet>
+						<group>
+							<field name="dept_name" />
+							<!-- <field name="dept_name" widget="selection" /> -->
+							<!-- <field name="dept_name" widget="many2one_tags" /> -->
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="deptlist_tree_view">
+			<field name="name">dept.list.tree</field>
+			<field name="model">dept.list</field>
+			<field name="arch" type="xml">
+				<field name="dept_name" />
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_deptlist_tree_view">
+			<field name="name">Department List</field>
+			<field name="res_model">dept.list</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="admin_menu" name="Admin" parent="super_parent_menu" />
+		<menuitem id="deptlist_submenu" name="Department Information"
+			parent="admin_menu" action="action_deptlist_tree_view" />
+	</data>
+	<data>
+		<record model="ir.ui.view" id="coursedetail_form_view">
+			<field name="name">course.detail.form</field>
+			<field name="model">course.detail</field>
+			<field name="arch" type="xml">
+				<form string="Course Details" version="7.0">
+					<sheet>
+						<group>
+							<field name="course_name" />
+							<field name="course_code" />
+							<!-- <field name="dept_name" widget="selection" /> -->
+							<field name="dept_name" widget="many2one_tags" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="coursedetail_tree_view">
+			<field name="name">course.detail.tree</field>
+			<field name="model">course.detail</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Course details">
+					<field name="course_name" />
+					<field name="course_code" />
+					<field name="dept_name" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_coursedetail_tree_view">
+			<field name="name">Course Details</field>
+			<field name="res_model">course.detail</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="coursedetail_submenu" name="Course Detail"
+			parent="deptlist_submenu" action="action_coursedetail_tree_view" />
+		<!-- <menuitem id="coursedetail_submenu" name="Course Detail" parent="admin_menu" 
+			action="action_coursedetail_tree_view" /> -->
+	</data>
+</openerp>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="opac_form_view">
+			<field name="name">opac.form</field>
+			<field name="model">opac</field>
+			<!-- <field name="type">form</field> -->
+			<field name="arch" type="xml">
+				<form string="Welcome to Pondicherry University OPAC" version="7.0">
+					<sheet>
+						<notebook>
+							<page string='Welcome to Pondicherry University OPAC'>
+								<b>Online Public Access Catalogue:</b>
+								<ul type="square">
+									<li>Students, Research scholars and Lecturers Informations.
+									</li>
+									<li>Library Book's and journal's information.</li>
+									<li>Maintaining Book/journals stock list.</li>
+									<li>Lending of Book.</li>
+									<li>Student details about lending book, due amount.</li>
+									<li>etc.,</li>
+								</ul>
+
+								<button name="show_studentinfo" string="Student Info"
+									type="object" status="draft" />
+								<button name="show_lecturerinfo" string="Lecturer Info"
+									type="object" status="draft" />
+								<button name="show_bookreserve" string="Book Reservation"
+									type="object" status="draft" />
+								<button name="show_coursedetail" string="Course Details"
+									type="object" status="draft" />
+								<!-- <field string='Information about Students' /> -->
+							</page>
+						</notebook>
+					</sheet>
+
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_opac_view">
+			<field name="name">OPAC Pondicherry University</field>
+			<field name="res_model">opac</field>
+			<field name="view_mode">form</field>
+		</record>
+
+		<menuitem id='super_parent_menu' name="OPAC" />
+		<menuitem id='opac_menu' name="OPAC" parent="super_parent_menu" />
+		<menuitem id='sub_menu' name="Home Page" parent='opac_menu'
+			action="action_opac_view" />
+	</data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="action_calcualate_experience" model="ir.actions.act_window">
+			<field name="name">Lecturers Information</field>
+			<field name="res_model">lecturer.info.wizard</field>
+			<field name="src_model">lecturer.info</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'order_id': active_id}</field>
+		</record>
+		<record model="ir.ui.view" id="lecturerinfo_inherit_view">
+			<field name="name">lecturer.info.inherit</field>
+			<field name="model">lecturer.info</field>
+			<field name="inherit_id" ref="lecturerinfo_form_view" />
+			<!-- <field name="priority" eval="20" /> -->
+			<field name="arch" type="xml">
+				<field name="dept" position="after">
+					<field name="design" />
+					<field name="eligible" />
+					<field name="experience" />
+					<field name="endyear" />
+					<br />
+					<br />
+					<button name="this_year" string="This Year" type="object" />
+					<button name="%(action_calcualate_experience)d" string="Action Experience"
+						type="action" />
+					<button name="action_desig" string="Object Experience" type="object"
+						class="oe_highlight" context="{'order_id':active_id}" />
+				</field>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_lecturerinherit_tree_view">
+			<field name="name">Lecturers Designation</field>
+			<field name="res_model">lecturer.info</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="lecturerinherit_submenu" name="LectInfo Design (=Inherit)"
+			parent="admin_menu" action="action_lecturerinherit_tree_view" />
+	</data>
+</openerp>

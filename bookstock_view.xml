@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="bookstock_form_view">
+			<field name="name">book.stock.form</field>
+			<field name="model">book.stock</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Book Stock Info" version="7.0">
+					<sheet>
+						<div class="oe_title">
+							<field name='image' widget="image" class="oe_avatar oe_left" />
+
+
+							<group string='Book Name and ID'>
+								<field name='book_id' />
+								<field name='book_name' />
+
+
+								<field name='book_author' />
+								<div class="oe_edit_only">
+									<field name='book_description' />
+									<field name='book_count' />
+									<field name='book_state' />
+									<field name='book_status' />
+								</div>
+							</group>
+
+						</div>
+
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="bookstock_tree_view">
+			<field name="name">book.stock.tree</field>
+			<field name="model">book.stock</field>
+			<field name="prefix">BC</field>
+			<field name="padding">10</field>
+			<field name="arch" type="xml">
+				<tree string="Book Stock Info" version="7.0" editable="bottom"
+					colors="green:book_status==True;red:book_status==False">
+					<field name='book_id' />
+					<field name='book_name' />
+					<field name='book_author' />
+					<field name='book_description' />
+					<field name='book_count' />
+					<field name='book_state' />
+					<field name='book_status' />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Kanban View -->
+		<record model="ir.ui.view" id="bookstock_kanban_view">
+			<field name="name">book.stock.form</field>
+			<field name="model">book.stock</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban quick_create="false" create="true">
+					<field name="book_name" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_module_vignette">
+								<t t-set="installed" />
+								<img t-att-src="kanban_image('book.stock', 'image', record.id.value)"
+									class="oe_kanban_image" />
+								<div class="oe_module_desc">
+									<h4>
+										<a type="open">
+											<field name="book_name" />
+											<br />
+											<field name="book_author" string="Author:" />
+											<br />
+											<field name="book_count" />
+										</a>
+									</h4>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="bookstock_search_view">
+			<field name="name">book.stock.search</field>
+			<field name="model">book.stock</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Book Stock info">
+					<filter string="Book Stock Information" domain="[]"
+						name="group_by_stockstatus" context="{'group_by':'book_state'}" />
+					<field name='book_id' />
+					<field name='book_name' />
+					<field name='book_author' />
+					<field name='book_description' />
+					<field name='book_count' />
+					<field name='book_state' />
+					<field name='book_status' />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_bookstock_tree_view">
+			<field name="name">Book Stock Information</field>
+			<field name="res_model">book.stock</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="context">{'search_default_group_by_stockstatus':True}
+			</field>
+		</record>
+		<menuitem id="bookstock_submenu" name="Book Stock Information"
+			parent="admin_menu" action="action_bookstock_tree_view" />
+	</data>
+	<!-- Book Reserve -->
+	<data>
+		<record model="ir.ui.view" id="bookreserve_form_view">
+
+			<field name="name">book.reserve.form</field>
+			<field name="model">book.reserve</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Students Info" version="7.0">
+					<header>
+						<button name="button_reserved" string="Reserve" class="oe_highlight"
+							attrs="{'invisible':[('track_state','not in',['a'])]}" />
+						<!-- type='object' -->
+						<button name="button_taken" string="Take" class="oe_highlight"
+							attrs="{'invisible':[('track_state','not in',['a','r'])]}" />
+						<button name="button_return_cancel" string="Return" class="oe_highlight"
+							attrs="{'invisible':[('track_state','not in',['t'])]}" />
+						<button name="button_return_cancel" string="Cancel" class="oe_highlight"
+							attrs="{'invisible':[('track_state','not in',['r'])]}" />
+						<button name="button_lost" string="Lost" class="oe_highlight"
+							attrs="{'invisible':[('track_state','not in',['t'])]}" />
+						<field name="track_state" widget="statusbar" readonly="1"
+							class="oe_highlight" />
+						<!-- statusbar_visible="a,t,c" statusbar_colors='{"r":"red","t":"Blue","c":"Green"}'clickable="True" -->
+					</header>
+					<sheet>
+						<group colspan='4' col='2'>
+							<field name="name" placeholder="Select a Student Name" />
+							<!-- on_change="onchange_getbooklist(name)" /> -->
+							<!-- <field name="reserved_book" widget="one2many_list" /> -->
+							<field name="lend_book" widget="many2many_list" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="bookreserve_tree_view">
+			<field name="name">book.reserve.tree</field>
+			<field name="model">book.reserve</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Information">
+					<field name="name" />
+					<!-- <field name="reserved_book" /> -->
+					<field name="lend_book" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_bookreserve_tree_view">
+			<field name="name">Book Reservation</field>
+			<field name="res_model">book.reserve</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="bookstock_menu" name="Reserve Books/Journals"
+			parent="super_parent_menu" />
+		<menuitem id="bookreserve_submenu" name="Book Reservation"
+			parent="bookstock_menu" action="action_bookreserve_tree_view" />
+	</data>
+</openerp>

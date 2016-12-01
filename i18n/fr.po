@@ -1,0 +1,923 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* OPAC
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-02 10:10+0000\n"
+"PO-Revision-Date: 2015-09-02 10:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_marklist_tree_view
+msgid "Mark List"
+msgstr "Mark liste"
+
+#. module: OPAC
+#: model:res.groups,name:OPAC.group_opac_lecturer
+msgid "Lecturers"
+msgstr "Conférenciers"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_lecturer_info
+msgid "lecturer.info"
+msgstr "lecturer.info"
+
+#. module: OPAC
+#: view:book.stock:0
+msgid "Book Stock info"
+msgstr "le stock du livre"
+
+#. module: OPAC
+#: field:student.info,zip:0
+#: field:student.inherit,zip:0
+msgid "Zip"
+msgstr "Zip"
+
+#. module: OPAC
+#: field:course.detail,course_name:0
+#: field:student.info,course_name:0
+#: field:student.inherit,course_name:0
+msgid "Course Name"
+msgstr "Nom du cours"
+
+#. module: OPAC
+#: view:course.detail:0
+#: model:ir.actions.act_window,name:OPAC.action_coursedetail_tree_view
+#: view:opac:0
+msgid "Course Details"
+msgstr "Détails du cours"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Take"
+msgstr "Prendre"
+
+#. module: OPAC
+#: field:lecturer.detail,dept:0
+#: field:lecturer.info,dept:0
+#: field:student.info,dept:0
+#: field:student.inherit,dept:0
+msgid "Department"
+msgstr "Département"
+
+#. module: OPAC
+#: field:mark.list,internal:0
+msgid "Internal Marks"
+msgstr "Internal Marks"
+
+#. module: OPAC
+#: field:lecturer.info,experience:0
+#: field:lecturer.info.wizard,experience:0
+msgid "Year of Experience"
+msgstr "Année d'expérience"
+
+#. module: OPAC
+#: field:student.info,capname:0
+#: field:student.inherit,capname:0
+msgid "Capital Name"
+msgstr "Capital Name"
+
+#. module: OPAC
+#: field:student.info,todate:0
+#: field:student.inherit,todate:0
+msgid "Today"
+msgstr "Today"
+
+#. module: OPAC
+#: view:lecturer.info:0
+msgid "Lecturers Registration form"
+msgstr "Conférenciers Registration form"
+
+#. module: OPAC
+#: selection:lecturer.info,design:0
+msgid "Lecturer"
+msgstr "Conférencier"
+
+#. module: OPAC
+#: sql_constraint:course.detail:0
+msgid "Course Name already exists! \n"
+" Please enter a New Course Name."
+msgstr "Nom de cours existe déjà! \n"
+" S'il vous plaît entrer un nouveau nom de Cours."
+
+#. module: OPAC
+#: sql_constraint:course.detail:0
+msgid "Course Code already exists! \n"
+" Please enter a New Course Code."
+msgstr "Course Code already exists! \n"
+" Please enter a New Course Code."
+
+#. module: OPAC
+#: model:res.groups,name:OPAC.base_group
+msgid "Base group"
+msgstr "Base group"
+
+#. module: OPAC
+#: model:res.groups,comment:OPAC.group_opac_lecturer
+msgid "The Lecturers will have access to their own data in\n"
+"				the OPAC.\n"
+"			"
+msgstr "The Lecturers will have access to their own data in\n"
+"				the OPAC.\n"
+"			"
+
+#. module: OPAC
+#: view:course.detail:0
+msgid "Course details"
+msgstr "Course details"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_subject_mark
+msgid "subject.mark"
+msgstr "subject.mark"
+
+#. module: OPAC
+#: view:lecturer.info:0
+#: view:lecturer.info.wizard:0
+msgid "This Year"
+msgstr "This Year"
+
+#. module: OPAC
+#: model:ir.module.category,name:OPAC.opac_uni_categ
+msgid "OPAC University"
+msgstr "OPAC University"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_course_detail
+msgid "course.detail"
+msgstr "course.detail"
+
+#. module: OPAC
+#: model:res.groups,name:OPAC.user_group
+msgid "Lecturers group"
+msgstr "Lecturers group"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Library Book's and journal's information."
+msgstr "Library Book's and journal's information."
+
+#. module: OPAC
+#: view:mark.list:0
+msgid "Mark List and Grades"
+msgstr "Mark List and Grades"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Capitalise"
+msgstr "Capitalise"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_opac_view
+msgid "OPAC Pondicherry University"
+msgstr "OPAC Pondicherry University"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.lecturerinherit_submenu
+msgid "LectInfo Design (=Inherit)"
+msgstr "LectInfo Design (=Inherit)"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.sub_menu
+msgid "Home Page"
+msgstr "Page d'accueil"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Students Information"
+msgstr "Students Information"
+
+#. module: OPAC
+#: selection:mark.list,grade:0
+msgid "5<"
+msgstr "5<"
+
+#. module: OPAC
+#: field:lecturer.info,endyear:0
+#: field:lecturer.info.wizard,endyear:0
+msgid "Ending Date"
+msgstr "Ending Date"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Maintaining Book/journals stock list."
+msgstr "Maintaining Book/journals stock list."
+
+#. module: OPAC
+#: field:book.reserve,lend_book:0
+msgid "Lend Book"
+msgstr "Lend Book"
+
+#. module: OPAC
+#: view:opac:0
+msgid "etc.,"
+msgstr "etc.,"
+
+#. module: OPAC
+#: field:book.stock,book_name:0
+msgid "Book Name"
+msgstr "Book Name"
+
+#. module: OPAC
+#: field:lecturer.info.wizard,startyear:0
+msgid "Starting Date"
+msgstr "Starting Date"
+
+#. module: OPAC
+#: field:book.stock,book_id:0
+msgid "Book ID"
+msgstr "Book ID"
+
+#. module: OPAC
+#: selection:lecturer.info,gender:0
+#: selection:student.info,gender:0
+#: selection:student.inherit,gender:0
+msgid "Female"
+msgstr "Female"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_calcualate_experience
+#: model:ir.actions.act_window,name:OPAC.action_lecturerinfo_tree_view
+#: view:lecturer.info:0
+msgid "Lecturers Information"
+msgstr "Conférenciers Information"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_mark_list
+msgid "mark.list"
+msgstr "mark.list"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Welcome to Pondicherry University OPAC"
+msgstr "Welcome to Pondicherry University OPAC"
+
+#. module: OPAC
+#: view:book.stock:0
+msgid "Author:"
+msgstr "Author:"
+
+#. module: OPAC
+#: field:subject.mark,subjects:0
+msgid "Subject"
+msgstr "Subject"
+
+#. module: OPAC
+#: field:mark.list,subjectname:0
+msgid "Subject Name"
+msgstr "Subject Name"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Lecturer Info"
+msgstr "Lecturer Info"
+
+#. module: OPAC
+#: view:lecturer.info:0
+msgid "Lecturers Info"
+msgstr "Conférenciers Info"
+
+#. module: OPAC
+#: selection:book.stock,book_state:0
+msgid "Unavailable"
+msgstr "Unavailable"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_sujectmarklist_tree_view
+#: model:ir.ui.menu,name:OPAC.subjectmarks_submenu
+#: view:subject.mark:0
+msgid "Subject Marks"
+msgstr "Subject Marks"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_lecturer_info_wizard
+msgid "Wizard to get year of experience to lecturers info"
+msgstr "Wizard to get year of experience to lecturers info"
+
+#. module: OPAC
+#: field:lecturer.info,dob:0
+#: field:student.info,dob:0
+#: field:student.inherit,dob:0
+msgid "Date Of Birth"
+msgstr "Date Of Birth"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.marklist_menu
+msgid "Mark"
+msgstr "Mark"
+
+#. module: OPAC
+#: selection:book.reserve,track_state:0
+msgid "Taken"
+msgstr "Taken"
+
+#. module: OPAC
+#: field:book.stock,book_state:0
+#: view:student.info:0
+#: field:student.info,state_id:0
+#: field:student.inherit,state_id:0
+msgid "State"
+msgstr "State"
+
+#. module: OPAC
+#: view:dept.list:0
+#: model:ir.actions.act_window,name:OPAC.action_deptlist_tree_view
+msgid "Department List"
+msgstr "Département liste"
+
+#. module: OPAC
+#: selection:lecturer.info,design:0
+msgid "Guest Faculty"
+msgstr "Guest Faculty"
+
+#. module: OPAC
+#: selection:book.reserve,track_state:0
+#: selection:book.stock,book_state:0
+msgid "Available"
+msgstr "Available"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Lending of Book."
+msgstr "Lending of Book."
+
+#. module: OPAC
+#: field:mark.list,total:0
+msgid "Total Marks"
+msgstr "Total Marks"
+
+#. module: OPAC
+#: field:lecturer.info,eligible:0
+msgid "Eligibility"
+msgstr "Eligibility"
+
+#. module: OPAC
+#: field:book.reserve,name:0
+#: field:mark.list,name:0
+#: field:student.info,fullname:0
+#: field:student.inherit,fullname:0
+msgid "Student Name"
+msgstr "Student Name"
+
+#. module: OPAC
+#: field:mark.list,external:0
+msgid "External Marks"
+msgstr "External Marks"
+
+#. module: OPAC
+#: sql_constraint:student.info:0
+#: sql_constraint:student.inherit:0
+msgid "Please enter a New Register no. It must be Unique!"
+msgstr "Please enter a New Register no. It must be Unique!"
+
+#. module: OPAC
+#: field:lecturer.info,gender:0
+#: field:student.info,gender:0
+#: field:student.inherit,gender:0
+msgid "Gender"
+msgstr "Gender"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.marklistandgrade_submenu
+msgid "Mark and Grading"
+msgstr "Mark and Grading"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_bookreserve_tree_view
+#: model:ir.ui.menu,name:OPAC.bookreserve_submenu
+#: view:opac:0
+msgid "Book Reservation"
+msgstr "Book Reservation"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Students, Research scholars and Lecturers Informations."
+msgstr "Students, Research scholars and Lecturers Informations."
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_studentinfo_tree_view
+#: model:ir.ui.menu,name:OPAC.studentinfo_submenu
+msgid "Student Information"
+msgstr "Etudiants Information"
+
+#. module: OPAC
+#: field:lecturer.info,age:0
+#: field:student.info,age:0
+#: field:student.inherit,age:0
+msgid "Age"
+msgstr "Age"
+
+#. module: OPAC
+#: sql_constraint:student.info:0
+#: sql_constraint:student.inherit:0
+msgid "You're not elible to join in University. You must be above 15 Year old!"
+msgstr "You're not elible to join in University. You must be above 15 Year old!"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_dept_list
+msgid "dept.list"
+msgstr "dept.list"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_studentinherit_tree_view
+msgid "Students Admission"
+msgstr "Students Admission"
+
+#. module: OPAC
+#: view:lecturer.info:0
+msgid "Object Experience"
+msgstr "Object Experience"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_lecturerdetail_tree_view
+#: view:lecturer.detail:0
+msgid "Lecturers Detail"
+msgstr "Conférenciers Detail"
+
+#. module: OPAC
+#: constraint:lecturer.info:0
+msgid "You're too young to became Lecturer/Professor?etc.."
+msgstr "You're too young to became Lecturer/Professor?etc.."
+
+#. module: OPAC
+#: selection:lecturer.info,gender:0
+#: selection:student.info,gender:0
+#: selection:student.inherit,gender:0
+msgid "Male"
+msgstr "Male"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.opac_menu
+#: model:ir.ui.menu,name:OPAC.super_parent_menu
+msgid "OPAC"
+msgstr "OPAC"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.studentinherit_submenu
+msgid "Admission (Inherit!=Name)"
+msgstr "Admission (Inherit!=Name)"
+
+#. module: OPAC
+#: field:student.info,lname:0
+#: field:student.inherit,lname:0
+msgid "Last Name"
+msgstr "Last Name"
+
+#. module: OPAC
+#: field:book.stock,image:0
+#: field:student.info,image:0
+#: field:student.inherit,image:0
+msgid "Image"
+msgstr "Image"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "personal_details"
+msgstr "personal_details"
+
+#. module: OPAC
+#: field:student.info,docc:0
+#: field:student.inherit,docc:0
+msgid "Date of Completion"
+msgstr "Date of Completion"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_book_reserve
+msgid "book.reserve"
+msgstr "book.reserve"
+
+#. module: OPAC
+#: view:mark.list:0
+msgid "Calculate"
+msgstr "Calculate"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Information"
+msgstr "Information"
+
+#. module: OPAC
+#: view:student.info:0
+#: view:student.inherit:0
+msgid "Admission details"
+msgstr "Admission details"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Street..."
+msgstr "Street..."
+
+#. module: OPAC
+#: view:opac:0
+msgid "Student details about lending book, due amount."
+msgstr "Student details about lending book, due amount."
+
+#. module: OPAC
+#: field:book.stock,book_author:0
+msgid "Author Name"
+msgstr "Author Name"
+
+#. module: OPAC
+#: field:book.reserve,track_state:0
+#: field:book.stock,book_status:0
+msgid "Status"
+msgstr "Status"
+
+#. module: OPAC
+#: model:ir.actions.act_window,name:OPAC.action_lecturerinherit_tree_view
+msgid "Lecturers Designation"
+msgstr "Conférenciers Designation"
+
+#. module: OPAC
+#: model:res.groups,name:OPAC.group_opac_student
+msgid "Students"
+msgstr "Students"
+
+#. module: OPAC
+#: field:student.info,street2:0
+#: field:student.inherit,street2:0
+msgid "Street2"
+msgstr "Street2"
+
+#. module: OPAC
+#: field:student.inherit,reason:0
+msgid "Reason for rejection of admission"
+msgstr "Reason for rejection of admission"
+
+#. module: OPAC
+#: field:student.inherit,admissionstatus:0
+msgid "Admission Status"
+msgstr "Admission Status"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_student_inherit
+msgid "student.inherit"
+msgstr "student.inherit"
+
+#. module: OPAC
+#: field:book.stock,book_description:0
+msgid "Book Description"
+msgstr "Book Description"
+
+#. module: OPAC
+#: field:lecturer.info,design:0
+msgid "Designation"
+msgstr "Designation"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Select a Student Name"
+msgstr "Select a Student Name"
+
+#. module: OPAC
+#: field:subject.mark,total_marks:0
+msgid "Mark details"
+msgstr "Mark details"
+
+#. module: OPAC
+#: sql_constraint:lecturer.info:0
+msgid "Please enter a Your own Mobile no. It must be Unique and personnel!"
+msgstr "Please enter a Your own Mobile no. It must be Unique and personnel!"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Personal Details"
+msgstr "Personal Details"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_opac
+msgid "opac"
+msgstr "opac"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Eligible:Age above 17"
+msgstr "Eligible:Age above 17"
+
+#. module: OPAC
+#: selection:mark.list,grade:0
+msgid "10"
+msgstr "10"
+
+#. module: OPAC
+#: view:book.stock:0
+msgid "Book Stock Info"
+msgstr "Livre Stock Info"
+
+#. module: OPAC
+#: field:student.info,name:0
+#: field:student.inherit,name:0
+msgid "First Name"
+msgstr "First Name"
+
+#. module: OPAC
+#: view:lecturer.info.wizard:0
+msgid "Process"
+msgstr "Process"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_student_info
+msgid "student.info"
+msgstr "student.info"
+
+#. module: OPAC
+#: field:mark.list,grade:0
+msgid "Grade"
+msgstr "Grade"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_lecturer_detail
+msgid "lecturer.detail"
+msgstr "lecturer.detail"
+
+#. module: OPAC
+#: view:student.info:0
+#: field:student.info,city:0
+#: field:student.inherit,city:0
+msgid "City"
+msgstr "Ville"
+
+#. module: OPAC
+#: selection:lecturer.info,design:0
+msgid "Research Scholar"
+msgstr "Research Scholar"
+
+#. module: OPAC
+#: model:res.groups,comment:OPAC.group_opac_student
+msgid "The Students will have access to their own details\n"
+"				in the OPAC.\n"
+"			"
+msgstr "The Students will have access to their own details\n"
+"				in the OPAC.\n"
+"			"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Students Info"
+msgstr "Students Info"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.lecturerdetail_submenu
+msgid "Lecturer Detail"
+msgstr "Conférencier Detail"
+
+#. module: OPAC
+#: field:lecturer.info,email:0
+#: field:student.info,email:0
+#: field:student.inherit,email:0
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: OPAC
+#: view:lecturer.info:0
+msgid "Action Experience"
+msgstr "Action Experience"
+
+#. module: OPAC
+#: view:book.stock:0
+#: model:ir.actions.act_window,name:OPAC.action_bookstock_tree_view
+#: model:ir.ui.menu,name:OPAC.bookstock_submenu
+msgid "Book Stock Information"
+msgstr "Book Stock Information"
+
+#. module: OPAC
+#: view:student.inherit:0
+msgid "Students Information Inherited"
+msgstr "Students Information Inherited"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.deptlist_submenu
+msgid "Department Information"
+msgstr "Département Information"
+
+#. module: OPAC
+#: field:book.stock,book_count:0
+msgid "Stock"
+msgstr "Stock"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.profileinfo_menu
+msgid "Profile"
+msgstr "Profil"
+
+#. module: OPAC
+#: field:student.info,status:0
+#: field:student.inherit,status:0
+msgid "Status of Student"
+msgstr "Status of Student"
+
+#. module: OPAC
+#: field:student.info,doj:0
+#: field:student.inherit,doj:0
+msgid "Date of Joining"
+msgstr "Date of Joining"
+
+#. module: OPAC
+#: view:student.info:0
+#: view:student.inherit:0
+msgid "Students Registration form"
+msgstr "Students Registration form"
+
+#. module: OPAC
+#: model:ir.model,name:OPAC.model_book_stock
+msgid "book.stock"
+msgstr "book.stock"
+
+#. module: OPAC
+#: view:lecturer.detail:0
+msgid "Lecturers Details"
+msgstr "Conférenciers Details"
+
+#. module: OPAC
+#: field:student.info,street:0
+#: field:student.inherit,street:0
+msgid "Street"
+msgstr "Street"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.lecturerinfo_submenu
+msgid "Lecturer Information"
+msgstr "Conférencier Information"
+
+#. module: OPAC
+#: view:lecturer.info:0
+#: field:lecturer.info,address:0
+#: view:student.info:0
+#: view:student.inherit:0
+msgid "Address"
+msgstr "adresse"
+
+#. module: OPAC
+#: field:lecturer.info,contact:0
+#: field:student.info,contact:0
+#: field:student.inherit,contact:0
+msgid "Mobile Number"
+msgstr "Mobile Number"
+
+#. module: OPAC
+#: field:lecturer.detail,name:0
+#: field:lecturer.info,name:0
+#: field:subject.mark,student_name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: OPAC
+#: view:book.reserve:0
+#: selection:book.reserve,track_state:0
+msgid "Lost"
+msgstr "Lost"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.admin_menu
+msgid "Admin"
+msgstr "Admin"
+
+#. module: OPAC
+#: view:student.info:0
+#: field:student.info,country:0
+#: field:student.info,country_id:0
+#: field:student.inherit,country:0
+#: field:student.inherit,country_id:0
+msgid "Country"
+msgstr "Country"
+
+#. module: OPAC
+#: field:course.detail,dept_name:0
+#: field:dept.list,dept_name:0
+msgid "Department Name"
+msgstr "Département Name"
+
+#. module: OPAC
+#: selection:lecturer.info,design:0
+msgid "Professor"
+msgstr "Professor"
+
+#. module: OPAC
+#: view:student.info:0
+#: view:student.inherit:0
+msgid "Welcome for Admission"
+msgstr "Welcome for Admission"
+
+#. module: OPAC
+#: view:lecturer.info.wizard:0
+msgid "Calculate Experience"
+msgstr "Calculate Experience"
+
+#. module: OPAC
+#: view:book.stock:0
+msgid "Book Name and ID"
+msgstr "Book Name and ID"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Student Info"
+msgstr "Student Info"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Return"
+msgstr "Return"
+
+#. module: OPAC
+#: sql_constraint:lecturer.info:0
+msgid "Please enter a Your own email id. It must be Unique and personnel!"
+msgstr "Please enter a Your own email id. It must be Unique and personnel!"
+
+#. module: OPAC
+#: view:book.reserve:0
+msgid "Reserve"
+msgstr "Reserve"
+
+#. module: OPAC
+#: selection:subject.mark,subjects:0
+msgid "Subject 1"
+msgstr "Subject 1"
+
+#. module: OPAC
+#: field:course.detail,course_code:0
+msgid "Course Code"
+msgstr "Course Code"
+
+#. module: OPAC
+#: sql_constraint:dept.list:0
+msgid "Name already exists! \n"
+" Please enter a New Department Name."
+msgstr "Name already exists! \n"
+" Please enter a New Département Name."
+
+#. module: OPAC
+#: selection:subject.mark,subjects:0
+msgid "Subject 2"
+msgstr "Subject 2"
+
+#. module: OPAC
+#: selection:book.reserve,track_state:0
+msgid "Reserved"
+msgstr "Reserved"
+
+#. module: OPAC
+#: selection:subject.mark,subjects:0
+msgid "Subject 4"
+msgstr "Subject 4"
+
+#. module: OPAC
+#: field:student.info,regno:0
+#: field:student.inherit,regno:0
+msgid "Register No:"
+msgstr "Register No:"
+
+#. module: OPAC
+#: view:student.info:0
+msgid "Group by gender"
+msgstr "Group by gender"
+
+#. module: OPAC
+#: selection:subject.mark,subjects:0
+msgid "Subject 3"
+msgstr "Subject 3"
+
+#. module: OPAC
+#: view:opac:0
+msgid "Online Public Access Catalogue:"
+msgstr "Online Public Access Catalogue:"
+
+#. module: OPAC
+#: model:res.groups,name:OPAC.manager_group
+msgid "Students group"
+msgstr "Students group"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.bookstock_menu
+msgid "Reserve Books/Journals"
+msgstr "Reserve Books/Journals"
+
+#. module: OPAC
+#: model:ir.ui.menu,name:OPAC.coursedetail_submenu
+msgid "Course Detail"
+msgstr "Course Detail"
+
+#. module: OPAC
+#: sql_constraint:book.reserve:0
+msgid "He has already taken Book! \n"
+" So,Please go to his own record to add books"
+msgstr "He has already taken Book! \n"
+" So,Please go to his own record to add books"
+

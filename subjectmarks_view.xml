@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="marklist_form_view">
+			<field name="name">mark.list.form</field>
+			<field name="model">mark.list</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Mark List and Grades" version="7.0">
+					<sheet>
+						<group colspan="4" col='2'>
+							<field name="name" />
+							<!-- <field name="subjectname"></field> -->
+
+							<field name="internal" on_change="onchange_gettotal_id(internal,external)" />
+							<field name="external" on_change="onchange_gettotal_id(internal,external)" />
+							<field name="total" on_change="onchange_getgrade_id(total)" />
+							<field name="grade" required='True' />
+							<button name="dummy" string="Calculate" type="object" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="marklist_tree_view">
+			<field name="name">mark.list.tree</field>
+			<field name="model">mark.list</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Mark List and Grades">
+					<field name="name" />
+					<!-- <field name="subjectname"></field> -->
+					<field name="internal" />
+					<field name="external" />
+					<field name="total" />
+					<field name="grade" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_marklist_tree_view">
+			<field name="name">Mark List</field>
+			<field name="res_model">mark.list</field>
+			<field name="view_mode">tree,form,</field>
+		</record>
+		<menuitem id="marklist_menu" name="Mark" parent="super_parent_menu" />
+		<menuitem id="marklistandgrade_submenu" name="Mark and Grading"
+			parent="marklist_menu" action="action_marklist_tree_view" />
+	</data>
+	<data>
+		<record model="ir.ui.view" id="sujectmarklist_form_view">
+			<field name="name">subject.mark.form</field>
+			<field name="model">subject.mark</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Subject Marks" version="7.0">
+					<sheet>
+						<group colspan="4" col='2'>
+							<field name="student_name" />
+							<field name="total_marks" />
+							<field name="subjects" />
+							<!-- <field name="percentage" /> -->
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="sujectmarklist_tree_view">
+			<field name="name">subject.mark.tree</field>
+			<field name="model">subject.mark</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Subject Marks">
+					<field name="student_name" />
+					<field name="total_marks" />
+					<field name="subjects" />
+					<!-- <field name="percentage" /> -->
+				</tree>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_sujectmarklist_tree_view">
+			<field name="name">Subject Marks</field>
+			<field name="res_model">subject.mark</field>
+			<field name="view_mode">tree,form,</field>
+		</record>
+		<menuitem id="subjectmarks_submenu" name="Subject Marks"
+			parent="marklist_menu" action="action_sujectmarklist_tree_view" />
+	</data>
+</openerp>
